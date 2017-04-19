@@ -1,5 +1,4 @@
 import { injectReducer } from '../../store/reducers'
-import InfoRoute from './routes/Info'
 
 export default (store) => ({
   path : 'results',
@@ -21,8 +20,5 @@ export default (store) => ({
 
     /* Webpack named bundle   */
     }, 'results')
-  },
-  childRoutes:[
-    InfoRoute(store)
-  ]
+  }
 })

@@ -6,6 +6,7 @@ import CounterRoute from './Counter'
 import ResultsRoute from './Results'
 import MyresultRoute from './Myresult'
 import WinsRoute from './Wins'
+import InfoRoute from './Info'
 
 
 /*  Note: Instead of using JSX, we recommend using react-router
@@ -27,6 +28,7 @@ export const createRoutes = (store) => ([
       ResultsRoute(store),
       MyresultRoute(store),
       WinsRoute(store),
+      InfoRoute(store)
     ]
   },
 
