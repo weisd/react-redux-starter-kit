@@ -12,6 +12,7 @@ export default (store) => ({
       const Results = require('./containers/ResultsContainer').default
       const reducer = require('./modules/results').default
 
+      console.log("results router", store)
       /*  Add the reducer to the store on key 'counter'  */
       injectReducer(store, { key: 'results', reducer })
 

@@ -81,8 +81,8 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-   loading : false,
-   list:[1,2,3,4,5,6,7,8,9,0]
+   loading : false, // 是否加载中
+   list:[1,2,3,4,5,6,7,8,9,0], // 列表数据
 }
 export default function counterReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]

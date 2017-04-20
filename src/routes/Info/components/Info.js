@@ -9,7 +9,7 @@ import {
 
 class Info extends Component {
   constructor(props) {
-      console.log('info' , props)
+      console.log('info Component props' , props)
     super(props);
   }
 

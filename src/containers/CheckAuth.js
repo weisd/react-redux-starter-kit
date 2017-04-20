@@ -1,0 +1,27 @@
+import {browserHistory} from 'react-router'
+import localstore from 'store'
+
+// 验证登陆
+export const CheckAuth = (store) => {
+    return (nextState, replace, callback) => {
+
+        console.log('CheckAuth ==== ', store.getState())
+
+        if (!Object.hasOwnProperty.call(store.getState(), 'token')) {
+            // 把上次访问的地址记下
+            localstore.set('Referer', store.getState().location.pathname)
+
+            if (__DEV__){
+                browserHistory.push('/auth/test_token')
+                return
+            }
+
+             window.location.href='http://www.baidu.com'
+             return
+        }
+
+        callback()
+    }
+}
+
+export default CheckAuth

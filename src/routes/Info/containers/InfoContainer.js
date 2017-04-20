@@ -18,9 +18,12 @@ const mapDispatchToProps = {
   loadmore,
 }
 
-const mapStateToProps = (state) => ({
-  list : state.results.list
-})
+const mapStateToProps = (state) => {
+  console.log('info state mapStateToProps', state)
+ return ({
+    list : []
+  })
+}
 
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

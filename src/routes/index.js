@@ -1,12 +1,14 @@
 // We only need to import the modules necessary for initial render
 import CoreLayout from '../layouts/CoreLayout'
 import StrategyLayout from '../layouts/StrategyLayout'
-import Home from './Home'
-import CounterRoute from './Counter'
+
 import ResultsRoute from './Results'
 import MyresultRoute from './Myresult'
 import WinsRoute from './Wins'
 import InfoRoute from './Info'
+import Auth from './Auth'
+// import Authorize from '../components/Oauth'
+import CheckAuth from '../containers/CheckAuth'
 
 
 /*  Note: Instead of using JSX, we recommend using react-router
@@ -15,10 +17,10 @@ import InfoRoute from './Info'
 export const createRoutes = (store) => ([
   {
     path        : '/',
-    component   : CoreLayout,
-    indexRoute  : Home,
+    // component   : CoreLayout,
+    // indexRoute  : Home,
     childRoutes : [
-      CounterRoute(store),
+      Auth(store)
     ]
   },
   {
@@ -29,8 +31,9 @@ export const createRoutes = (store) => ([
       MyresultRoute(store),
       WinsRoute(store),
       InfoRoute(store)
-    ]
-  },
+    ],
+    onEnter: CheckAuth(store)
+  }
 
 ])
 
