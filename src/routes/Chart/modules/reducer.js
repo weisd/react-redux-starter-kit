@@ -3,19 +3,19 @@ import merge from 'lodash/merge';
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const INFO_UPDATE = 'INFO_UPDATE'
+// export const RESULTS_REFRESH = 'RESULTS_REFRESH'
 // export const RESULTS_LOAD_MORE = 'RESULTS_LOAD_MORE'
 // export const RESULTS_LOADING = 'RESULTS_LOADING'
 
-// ------------------------------------
-// Actions
-// ------------------------------------
-export function info_update (info = {}) {
-  return {
-    type    : INFO_UPDATE,
-    payload : info
-  }
-}
+// // ------------------------------------
+// // Actions
+// // ------------------------------------
+// export function refresh (data = []) {
+//   return {
+//     type    : RESULTS_REFRESH,
+//     list : data
+//   }
+// }
 
 // export function loading (load = false) {
 //   return {
@@ -50,9 +50,9 @@ export function info_update (info = {}) {
 // }
 
 export const actions = {
-info_update
-  // loading,
-  // loadmore
+//   refresh,
+//   loading,
+//   loadmore
 }
 
 
@@ -60,30 +60,30 @@ info_update
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [INFO_UPDATE] : (state, action) => {
-     return merge({}, state,{
-       info:action.payload
-     })
-  },
-  // [RESULTS_LOADING] : (state, action) => {
-  //   return merge({}, state,{
-  //      loading:action.loading
-  //    })
-  // },
-  // [RESULTS_LOAD_MORE] : (state, action) => {
-  //   return merge({}, state,{
-  //      list:[...state.list, ...list]
-  //    })
-  // }
+//   [RESULTS_REFRESH] : (state, action) => {
+//      return merge({}, state,{
+//        list:action.list
+//      })
+//   },
+//   [RESULTS_LOADING] : (state, action) => {
+//     return merge({}, state,{
+//        loading:action.loading
+//      })
+//   },
+//   [RESULTS_LOAD_MORE] : (state, action) => {
+//     return merge({}, state,{
+//        list:[...state.list, ...list]
+//      })
+//   }
 }
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
 const initialState = {
-   info: {}
+   loading : false,
 }
-export default function counterReducer (state = initialState, action) {
+export default function reducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
 
   return handler ? handler(state, action) : state

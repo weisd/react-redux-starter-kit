@@ -1,27 +1,25 @@
 import { connect } from 'react-redux'
-import { info_update } from '../modules/info'
+// import { loading, refresh,loadmore } from '../modules/wins'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
     wiring in the actions and state necessary to render a presentational
     component - in this case, the counter:   */
 
-import Info from '../components/Info'
+import Chart from '../components/chart'
 
 /*  Object of action creators (can also be function that returns object).
     Keys will be passed as props to presentational components. Here we are
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  info_update,
-  // loading,
-  // refresh,
-  // loadmore,
+//   loading,
+//   refresh,
+//   loadmore,
 }
 
 const mapStateToProps = (state) => ({
-    list : state.results ? state.results.list : [],
-    info : {}
+//   list : state.wins.list
 })
 
 
@@ -39,4 +37,4 @@ const mapStateToProps = (state) => ({
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
-export default connect(mapStateToProps, mapDispatchToProps)(Info)
+export default connect(mapStateToProps, mapDispatchToProps)(Chart)

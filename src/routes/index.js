@@ -9,6 +9,9 @@ import InfoRoute from './Info'
 import Auth from './Auth'
 // import Authorize from '../components/Oauth'
 import CheckAuth from '../containers/CheckAuth'
+import NotFound from '../containers/NotFound'
+import ErrorHandle from '../containers/ErrorHandle'
+import Chart from './Chart'
 
 
 /*  Note: Instead of using JSX, we recommend using react-router
@@ -20,7 +23,8 @@ export const createRoutes = (store) => ([
     // component   : CoreLayout,
     // indexRoute  : Home,
     childRoutes : [
-      Auth(store)
+      Auth(store),
+      Chart(store)
     ]
   },
   {
@@ -33,6 +37,14 @@ export const createRoutes = (store) => ([
       InfoRoute(store)
     ],
     onEnter: CheckAuth(store)
+  },
+  {
+    path : '/error',
+    component: ErrorHandle
+  },
+  {
+    path : "*",
+    component : NotFound
   }
 
 ])

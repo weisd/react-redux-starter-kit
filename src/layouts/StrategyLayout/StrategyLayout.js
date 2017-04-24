@@ -8,7 +8,7 @@ import {
   Icon,
 //   Badge,
 //   amStyles,
-} from 'amazeui-touch';
+} from 'amazeui-touch'; // yarn install amazeui-touch
 
 
 export class StrategyLayout extends Component {

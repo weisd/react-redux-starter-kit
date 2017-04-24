@@ -16,7 +16,7 @@ class Wins extends Component {
     const result = [];
     for (let i = 0; i < list.length; i++) {
       result.push(
-        <Card>
+        <Card key={list[i]}>
           Wins Card {list[i]}
         </Card>
       );

@@ -1,5 +1,7 @@
 import React , { Component } from 'react'
 import PropTypes from 'prop-types'
+import { browserHistory } from 'react-router'
+
 import {
   Container,
   Card,
@@ -8,19 +10,20 @@ import {
 
 
 class Results extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
-   onClick(e){
-console.log('click', e)
+   onClick(param,e){
+    console.log('click', e, param)
+    browserHistory.push(`/strategy/results/${param}`)
   }
 
   renderList(list){
     const result = [];
     for (let i = 0; i < list.length; i++) {
       result.push(
-        <Card id={list[i]} key={list[i]} onClick={this.onClick}>
+        <Card id={list[i]} key={list[i]} onClick={this.onClick.bind(this, list[i])}>
           results Card {list[i]}
         </Card>
       );
@@ -30,6 +33,7 @@ console.log('click', e)
   }
 
   render() {
+    console.log('Results ',this.props)
     const {list} = this.props
     return (
       <View>
