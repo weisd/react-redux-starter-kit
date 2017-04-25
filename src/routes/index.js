@@ -31,7 +31,7 @@ export const createRoutes = (store) => ([
     path        : '/strategy',
     component   : StrategyLayout,
     childRoutes : [
-      ResultsRoute(store),
+      ...ResultsRoute(store),
       MyresultRoute(store),
       WinsRoute(store),
       InfoRoute(store)
