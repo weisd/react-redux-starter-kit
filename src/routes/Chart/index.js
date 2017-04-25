@@ -19,6 +19,6 @@ export default (store) => ({
       cb(null, container)
 
     /* Webpack named bundle   */
-    }, 'wins')
+    }, 'chart')
   }
 })

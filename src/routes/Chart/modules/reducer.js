@@ -3,19 +3,19 @@ import merge from 'lodash/merge';
 // ------------------------------------
 // Constants
 // ------------------------------------
-// export const RESULTS_REFRESH = 'RESULTS_REFRESH'
+export const CHART_DATA_REFRESH = 'CHART_DATA_REFRESH'
 // export const RESULTS_LOAD_MORE = 'RESULTS_LOAD_MORE'
 // export const RESULTS_LOADING = 'RESULTS_LOADING'
 
 // // ------------------------------------
 // // Actions
 // // ------------------------------------
-// export function refresh (data = []) {
-//   return {
-//     type    : RESULTS_REFRESH,
-//     list : data
-//   }
-// }
+export function refresh (data = []) {
+  return {
+    type    : CHART_DATA_REFRESH,
+    payload : data
+  }
+}
 
 // export function loading (load = false) {
 //   return {
@@ -50,7 +50,7 @@ import merge from 'lodash/merge';
 // }
 
 export const actions = {
-//   refresh,
+  refresh,
 //   loading,
 //   loadmore
 }
@@ -60,11 +60,11 @@ export const actions = {
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-//   [RESULTS_REFRESH] : (state, action) => {
-//      return merge({}, state,{
-//        list:action.list
-//      })
-//   },
+  [CHART_DATA_REFRESH] : (state, action) => {
+     return merge({}, state,{
+       data:action.payload
+     })
+  },
 //   [RESULTS_LOADING] : (state, action) => {
 //     return merge({}, state,{
 //        loading:action.loading
@@ -81,7 +81,7 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-   loading : false,
+   data : [],
 }
 export default function reducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-// import { loading, refresh,loadmore } from '../modules/wins'
+import {  refresh } from '../modules/reducer'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -14,13 +14,16 @@ import Chart from '../components/chart'
 
 const mapDispatchToProps = {
 //   loading,
-//   refresh,
+  refresh,
 //   loadmore,
 }
 
-const mapStateToProps = (state) => ({
-//   list : state.wins.list
-})
+const mapStateToProps = (state) => {
+    console.log('state',state)
+    return ({
+        data : state.chart.data
+    })
+} 
 
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
