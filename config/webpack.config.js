@@ -39,7 +39,7 @@ webpackConfig.entry = {
 webpackConfig.output = {
   filename   : `[name].[${project.compiler_hash_type}].js`,
   path       : project.paths.dist(),
-  publicPath : '/'
+  publicPath : project.compiler_public_path
 }
 
 debug('output==',webpackConfig.output)
