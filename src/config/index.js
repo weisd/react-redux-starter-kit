@@ -8,7 +8,7 @@ const config = {
 
     // 换取token接口
     AuthUrl: '/weixin/oauth/login',
-    authorizeUrl: '/weixin/authorize/wxxg'
+    authorizeUrl: '/weixin/authorize/wxxg',
     Origin: 'wxxg',
 }
 
