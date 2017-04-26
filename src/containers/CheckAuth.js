@@ -1,5 +1,6 @@
 import {browserHistory} from 'react-router'
 import localstore from 'store'
+import config from '../config'
 
 // 验证登陆
 export const CheckAuth = (store) => {
@@ -16,7 +17,8 @@ export const CheckAuth = (store) => {
                 return
             }
 
-             window.location.href='http://www.baidu.com'
+            browserHistory.push(config.authorizeUrl)
+            //  window.location.href='http://www.baidu.com'
              return
         }
 

@@ -7,7 +7,8 @@ const config = {
     },
 
     // 换取token接口
-    AuthUrl: 'http://ktaip.ktkt.com/v1/user/login',
+    AuthUrl: '/weixin/oauth/login',
+    authorizeUrl: '/weixin/authorize/wxxg'
     Origin: 'wxxg',
 }
 
