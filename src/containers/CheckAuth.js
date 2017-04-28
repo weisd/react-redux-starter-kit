@@ -17,8 +17,8 @@ export const CheckAuth = (store) => {
                 return
             }
 
-            browserHistory.push(config.authorizeUrl)
-            //  window.location.href='http://www.baidu.com'
+            // browserHistory.push(config.authorizeUrl)
+             window.location.href=config.authorizeUrl
              return
         }
 

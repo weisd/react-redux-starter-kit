@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import {  refresh } from '../modules/reducer'
+import {updateExtType,fetchKlineList,fetchStockInfo, updateStockInfo,updateKline,updateKlineType,modelShow } from '../modules/reducer'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -13,16 +13,17 @@ import Chart from '../components/chart'
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-//   loading,
-  refresh,
-//   loadmore,
+    updateStockInfo,
+    updateKline,
+    updateKlineType,
+    modelShow,
+    fetchStockInfo,
+    fetchKlineList,
+    updateExtType
 }
 
 const mapStateToProps = (state) => {
-    console.log('state',state)
-    return ({
-        data : state.chart.data
-    })
+   return state.chart
 } 
 
 
